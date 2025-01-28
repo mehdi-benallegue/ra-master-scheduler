@@ -1,13 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="950" height="3550"
-     viewBox="0 0 950 3550">
-	 <rect width="100%" height="100%" fill="black" />
+     width="900" height="4150"
+     viewBox="0 0 1000 4150">
+  <rect width="90%" height="100%" fill="black" />
   <!-- Adjust width, height, and viewBox as needed -->
-  <foreignObject x="50" y="50" width="900" height="3500">
+  <foreignObject x="25" y="25" width="850" height="4100">
     <!-- Use the XHTML namespace for embedded HTML -->
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
      <head>
-     <title>Multi-Month Workday Planner Documentation</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Month Workday Planner Documentation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -139,25 +141,25 @@
     <h2>Example Output</h2>
     <h3>Initial Prompt and Configuration</h3>
     <div class="output">
-        ====== Multi-Month Workday Planner ======
-        Enter start year (e.g., 2025) [default: 2025]:
-        Enter start month (1-12) [default: 2]: 2
-        Enter duration in months (e.g., 2) [default: 2]: 2
-        Planning schedule from 2025-02 to 2025-03 (2 months).
-        Maximize overtime? (y/n) [n]: n
+        ====== Multi-Month Workday Planner ======<br />
+        Enter start year (e.g., 2025) [default: 2025]:<br />
+        Enter start month (1-12) [default: 2]: 2<br />
+        Enter duration in months (e.g., 2) [default: 2]: 2<br />
+        Planning schedule from 2025-02 to 2025-03 (2 months).<br />
+        Maximize overtime? (y/n) [n]: n<br />
     </div>
 
     <h3>Schedule Table</h3>
     <div class="output">
-        Date        WkDay    Type       Hours  Sum_of_next_7d
-        -----------------------------------------------------
-        <span class="weekend">2025-02-01  Sat   weekend     0.00   23.25</span>
-        <span class="weekend">2025-02-02  Sun   weekend     0.00   23.25</span>
-        <span class="working">2025-02-03  Mon   working     7.75   23.25</span>
-        <span class="free">2025-02-04  Tue   free        0.00   15.50</span>
-        <span class="working">2025-02-05  Wed   working     7.75   15.50</span>
-        ... etc ...
-        <span class="forced">2025-03-31  Mon   forced      7.75    7.75</span>
+        Date        WkDay    Type       Hours  Sum_of_next_7d<br />
+        -----------------------------------------------------<br />
+        <span class="weekend">2025-02-01  Sat   weekend     0.00   23.25</span><br />
+        <span class="weekend">2025-02-02  Sun   weekend     0.00   23.25</span><br />
+        <span class="working">2025-02-03  Mon   working     7.75   23.25</span><br />
+        <span class="free">2025-02-04  Tue   free        0.00   15.50</span><br />
+        <span class="working">2025-02-05  Wed   working     7.75   15.50</span><br />
+        ... etc ...<br />
+        <span class="forced">2025-03-31  Mon   forced      7.75    7.75</span><br />
     </div>
 
     <h2>Calendar View</h2>
@@ -312,11 +314,11 @@
     <hr />
     <h3>Adding Constraints</h3>
     <div class="output">
-        If you want, you can add/modify constraints (forced or disabled days).
-        Enter disabled days (eg '2025-2-1,2,5,3-25'):
-        > 2025-2-25,26,3-25
-        Enter forced days (eg '2025-3-1,2,2025-4-25'):
-        > 2025-2-4,5,3-31
+        If you want, you can add/modify constraints (forced or disabled days).<br />
+        Enter disabled days (eg '2025-2-1,2,5,3-25'):<br />
+        > 2025-2-25,26,3-25<br />
+        Enter forced days (eg '2025-3-1,2,2025-4-25'):<br />
+        > 2025-2-4,5,3-31<br />
     </div>
 
     <h3>Updated Calendar View</h3>
@@ -473,9 +475,494 @@
     <p>
       <strong>Custom holiday definitions:</strong> By integrating the <code>holidays</code> library, you can adjust or
       extend national holidays to suit local rules or add personal events. 
-      
+      <br /><br />
       <strong>Maximizing Overtime:</strong> If you want to earn more, you can choose to maximize total hours. This typically leads to more intense schedules while still respecting the weekly cap.
-      
+      <br /><br />
+      <strong>Multiple Months Scheduling:</strong> The planner seamlessly handles multi-month windows, ensuring a smooth carry-over of hour constraints from one month to the next.
+    </p>
+</body>
+    </html>
+  </foreignObject>
+</svg><svg xmlns="http://www.w3.org/2000/svg"
+     width="900" height="4150"
+     viewBox="0 0 900 4150">
+  <rect width="100%" height="100%" fill="black" />
+  <!-- Adjust width, height, and viewBox as needed -->
+  <foreignObject x="25" y="25" width="850" height="4100">
+    <!-- Use the XHTML namespace for embedded HTML -->
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+     <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Month Workday Planner Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #FFFFFF;
+            background-color: #000000;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #4CAF50;
+        }
+        code {
+            background-color: #333333;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .output {
+            background-color: #1E1E1E;
+            border: 1px solid #444;
+            padding: 10px;
+            overflow-x: auto;
+            font-family: monospace;
+            color: #FFFFFF;
+        }
+        .color-box {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            vertical-align: middle;
+            border: 1px solid #444;
+        }
+        /* Use background-color for boxes in the legend */
+        .color-box.forced {
+            background-color: #009688; /* Bluish Green */
+        }
+        .color-box.working {
+            background-color: #4CAF50; /* Bright Green */
+        }
+        .color-box.weekend {
+            background-color: #FFCDD2; /* Light Red */
+        }
+        .color-box.holiday {
+            background-color: #EF9A9A; /* Slightly Darker Red */
+        }
+        .color-box.forbidden {
+            background-color: #E91E63; /* Magenta */
+        }
+        .color-box.free {
+            background-color: #FFFFFF; /* White */
+        }
+        .color-box.blank {
+            background-color: #666666; /* Gray for blank spaces */
+        }
+
+        /* Additional color classes for text in the calendar (not the legend) */
+        .forced { color: #009688; }
+        .working { color: #4CAF50; }
+        .weekend { color: #FFCDD2; }
+        .holiday { color: #EF9A9A; }
+        .forbidden { color: #E91E63; }
+        .free { color: #FFFFFF; }
+        .blank { color: #666666; }
+
+        .calendar-wrapper {
+            margin-top: 1em;
+        }
+        .calendar-title {
+            margin: 0.5em 0;
+            font-weight: bold;
+        }
+        table.calendar-table {
+            border-collapse: collapse;
+            margin: 0.5em 0;
+            text-align: center;
+        }
+        table.calendar-table th,
+        table.calendar-table td {
+            width: 2em;
+            height: 2em;
+            padding: 0.3em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multi-Month Workday Planner Documentation</h1>
+
+    <h2>Introduction</h2>
+    <p>
+        The <strong>Multi-Month Workday Planner</strong> is a Python-based tool that generates optimal work schedules 
+        across multiple months. It enforces several constraints, such as:
+        <ul>
+            <li><strong>Limited weekly hours:</strong> No more than <code>29 hours</code> in any rolling <code>7-day</code> window.</li>
+            <li><strong>Holidays &amp; weekends:</strong> Automatically excludes recognized holidays and weekends, unless forced.</li>
+            <li><strong>Forced days:</strong> Some dates can be explicitly set as workdays.</li>
+            <li><strong>Disabled days:</strong> Some dates can be explicitly disallowed for work.</li>
+        </ul>
+        This flexibility allows users to balance required work hours, personal constraints, 
+        and overarching scheduling rules. The tool also offers an option to
+        <strong>maximize overtime</strong> (e.g., if higher income is desired).
+    </p>
+
+    <h2>Usage</h2>
+    <ol>
+        <li><b>Start the program:</b> Run the Python script in your terminal or IDE.</li>
+        <li><b>Enter the scheduling parameters:</b>
+            <ul>
+                <li><strong>Start year and month:</strong> If left blank, defaults to the next calendar month.</li>
+                <li><strong>Duration in months:</strong> You can schedule for 1 or more months.</li>
+                <li><strong>Overtime preference:</strong> Choose whether to maximize total hours (<code>y</code>) or not (<code>n</code>).</li>
+            </ul>
+        </li>
+        <li><b>Review the initial schedule:</b> By default, it excludes weekends and holidays, assigning the minimal required hours (e.g., 7.75 per day) up to any weekly limits.</li>
+        <li><b>Modify constraints:</b> You can disable (forbid) dates or force certain dates to be worked, using a compact date input like <code>2025-2-1,2,5</code> or <code>3-25</code>.</li>
+        <li><b>Re-solve and review:</b> The planner recalculates the schedule with the updated constraints. You can repeat this process until you’re satisfied.</li>
+    </ol>
+
+    <h2>Color Legend</h2>
+    <p>The tool uses the following color codes in its output:</p>
+    <ul>
+        <li><span class="color-box forced"></span> <b>Forced:</b> User-mandated workdays (overrides weekend/holiday).</li>
+        <li><span class="color-box working"></span> <b>Working:</b> Scheduled normal workdays.</li>
+        <li><span class="color-box weekend"></span> <b>Weekend:</b> Saturdays and Sundays (normally off unless forced).</li>
+        <li><span class="color-box holiday"></span> <b>Holiday:</b> Recognized holidays (normally off unless forced).</li>
+        <li><span class="color-box forbidden"></span> <b>Forbidden:</b> User-disabled days (cannot be worked).</li>
+        <li><span class="color-box free"></span> <b>Free:</b> Non-working days (the planner chose not to schedule work).</li>
+    </ul>
+
+    <h2>Example Output</h2>
+    <h3>Initial Prompt and Configuration</h3>
+    <div class="output">
+        ====== Multi-Month Workday Planner ======<br />
+        Enter start year (e.g., 2025) [default: 2025]:<br />
+        Enter start month (1-12) [default: 2]: 2<br />
+        Enter duration in months (e.g., 2) [default: 2]: 2<br />
+        Planning schedule from 2025-02 to 2025-03 (2 months).<br />
+        Maximize overtime? (y/n) [n]: n<br />
+    </div>
+
+    <h3>Schedule Table</h3>
+    <div class="output">
+        Date        WkDay    Type       Hours  Sum_of_next_7d<br />
+        -----------------------------------------------------<br />
+        <span class="weekend">2025-02-01  Sat   weekend     0.00   23.25</span><br />
+        <span class="weekend">2025-02-02  Sun   weekend     0.00   23.25</span><br />
+        <span class="working">2025-02-03  Mon   working     7.75   23.25</span><br />
+        <span class="free">2025-02-04  Tue   free        0.00   15.50</span><br />
+        <span class="working">2025-02-05  Wed   working     7.75   15.50</span><br />
+        ... etc ...<br />
+        <span class="forced">2025-03-31  Mon   forced      7.75    7.75</span><br />
+    </div>
+
+    <h2>Calendar View</h2>
+    <p>
+      Below, you can see two calendar views: one for the <strong>initial</strong> schedule (no forced/disabled days) 
+      and one for the <strong>updated</strong> schedule (with forced/disabled constraints).
+    </p>
+
+    <!-- FEBRUARY 2025 (No forced/disabled) -->
+    <div class="calendar-wrapper">
+      <div class="calendar-title">February 2025</div>
+      <table class="calendar-table">
+        <thead>
+          <tr>
+            <th>Su</th>
+            <th>Mo</th>
+            <th>Tu</th>
+            <th>We</th>
+            <th>Th</th>
+            <th>Fr</th>
+            <th>Sa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Row 1: skip columns until Sat=1 -->
+          <tr>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="weekend">1</td>
+          </tr>
+          <!-- Row 2: Sun=2, Mon=3, etc. -->
+          <tr>
+            <td class="weekend">2</td>
+            <td class="working">3</td>
+            <td class="free">4</td>
+            <td class="working">5</td>
+            <td class="free">6</td>
+            <td class="working">7</td>
+            <td class="weekend">8</td>
+          </tr>
+          <tr>
+            <td class="weekend">9</td>
+            <td class="free">10</td>
+            <td class="holiday">11</td>
+            <td class="free">12</td>
+            <td class="working">13</td>
+            <td class="free">14</td>
+            <td class="weekend">15</td>
+          </tr>
+          <tr>
+            <td class="weekend">16</td>
+            <td class="working">17</td>
+            <td class="free">18</td>
+            <td class="working">19</td>
+            <td class="working">20</td>
+            <td class="free">21</td>
+            <td class="weekend">22</td>
+          </tr>
+          <tr>
+            <td class="weekend">23</td>
+            <td class="holiday">24</td>
+            <td class="working">25</td>
+            <td class="working">26</td>
+            <td class="working">27</td>
+            <td class="free">28</td>
+            <td class="blank"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MARCH 2025 (No forced/disabled) -->
+    <div class="calendar-wrapper">
+      <div class="calendar-title">March 2025</div>
+      <table class="calendar-table">
+        <thead>
+          <tr>
+            <th>Su</th>
+            <th>Mo</th>
+            <th>Tu</th>
+            <th>We</th>
+            <th>Th</th>
+            <th>Fr</th>
+            <th>Sa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Row 1: skip columns until Sat=1 -->
+          <tr>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="weekend">1</td>
+          </tr>
+          <!-- Row 2: 2..8 -->
+          <tr>
+            <td class="weekend">2</td>
+            <td class="free">3</td>
+            <td class="working">4</td>
+            <td class="free">5</td>
+            <td class="working">6</td>
+            <td class="free">7</td>
+            <td class="weekend">8</td>
+          </tr>
+          <tr>
+            <td class="weekend">9</td>
+            <td class="working">10</td>
+            <td class="working">11</td>
+            <td class="free">12</td>
+            <td class="free">13</td>
+            <td class="working">14</td>
+            <td class="weekend">15</td>
+          </tr>
+          <tr>
+            <td class="weekend">16</td>
+            <td class="free">17</td>
+            <td class="working">18</td>
+            <td class="working">19</td>
+            <td class="holiday">20</td>
+            <td class="free">21</td>
+            <td class="weekend">22</td>
+          </tr>
+          <tr>
+            <td class="weekend">23</td>
+            <td class="free">24</td>
+            <td class="working">25</td>
+            <td class="free">26</td>
+            <td class="free">27</td>
+            <td class="working">28</td>
+            <td class="weekend">29</td>
+          </tr>
+          <tr>
+            <td class="weekend">30</td>
+            <td class="working">31</td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr />
+    <h3>Adding Constraints</h3>
+    <div class="output">
+        If you want, you can add/modify constraints (forced or disabled days).<br />
+        Enter disabled days (eg '2025-2-1,2,5,3-25'):<br />
+        > 2025-2-25,26,3-25<br />
+        Enter forced days (eg '2025-3-1,2,2025-4-25'):<br />
+        > 2025-2-4,5,3-31<br />
+    </div>
+
+    <h3>Updated Calendar View</h3>
+    <p>After applying forced and forbidden dates, here is the updated schedule:</p>
+    <!-- FEBRUARY 2025 (post-constraint) -->
+    <div class="calendar-wrapper">
+      <div class="calendar-title">February 2025</div>
+      <table class="calendar-table">
+        <thead>
+          <tr>
+            <th>Su</th>
+            <th>Mo</th>
+            <th>Tu</th>
+            <th>We</th>
+            <th>Th</th>
+            <th>Fr</th>
+            <th>Sa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Row 1: skip columns until Sat=1 -->
+          <tr>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="weekend">1</td>
+          </tr>
+          <tr>
+            <td class="weekend">2</td>
+            <td class="working">3</td>
+            <td class="forced">4</td>
+            <td class="forced">5</td>
+            <td class="free">6</td>
+            <td class="free">7</td>
+            <td class="weekend">8</td>
+          </tr>
+          <tr>
+            <td class="weekend">9</td>
+            <td class="working">10</td>
+            <td class="holiday">11</td>
+            <td class="working">12</td>
+            <td class="working">13</td>
+            <td class="working">14</td>
+            <td class="weekend">15</td>
+          </tr>
+          <tr>
+            <td class="weekend">16</td>
+            <td class="working">17</td>
+            <td class="free">18</td>
+            <td class="working">19</td>
+            <td class="free">20</td>
+            <td class="working">21</td>
+            <td class="weekend">22</td>
+          </tr>
+          <tr>
+            <td class="weekend">23</td>
+            <td class="holiday">24</td>
+            <td class="forbidden">25</td>
+            <td class="forbidden">26</td>
+            <td class="working">27</td>
+            <td class="free">28</td>
+            <td class="blank"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MARCH 2025 (post-constraint) -->
+    <div class="calendar-wrapper">
+      <div class="calendar-title">March 2025</div>
+      <table class="calendar-table">
+        <thead>
+          <tr>
+            <th>Su</th>
+            <th>Mo</th>
+            <th>Tu</th>
+            <th>We</th>
+            <th>Th</th>
+            <th>Fr</th>
+            <th>Sa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Row 1: skip columns until Sat=1 -->
+          <tr>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="weekend">1</td>
+          </tr>
+          <tr>
+            <td class="weekend">2</td>
+            <td class="free">3</td>
+            <td class="working">4</td>
+            <td class="working">5</td>
+            <td class="free">6</td>
+            <td class="working">7</td>
+            <td class="weekend">8</td>
+          </tr>
+          <tr>
+            <td class="weekend">9</td>
+            <td class="free">10</td>
+            <td class="working">11</td>
+            <td class="free">12</td>
+            <td class="free">13</td>
+            <td class="working">14</td>
+            <td class="weekend">15</td>
+          </tr>
+          <tr>
+            <td class="weekend">16</td>
+            <td class="working">17</td>
+            <td class="working">18</td>
+            <td class="working">19</td>
+            <td class="holiday">20</td>
+            <td class="free">21</td>
+            <td class="weekend">22</td>
+          </tr>
+          <tr>
+            <td class="weekend">23</td>
+            <td class="free">24</td>
+            <td class="forbidden">25</td>
+            <td class="working">26</td>
+            <td class="working">27</td>
+            <td class="free">28</td>
+            <td class="weekend">29</td>
+          </tr>
+          <tr>
+            <td class="weekend">30</td>
+            <td class="forced">31</td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr />
+    <h2>Common Errors</h2>
+    <ul>
+        <li><b>Invalid Input:</b> If you enter a malformed date (like <code>2025-13-40</code>), the program will detect the error and prompt you to re-enter.</li>
+        <li><b>Conflicting Constraints:</b> If you force a weekend or holiday, it overrides its default type, potentially reducing available constraints for other days.</li>
+    </ul>
+
+    <h2>Advanced Features</h2>
+    <p>
+      <strong>Custom holiday definitions:</strong> By integrating the <code>holidays</code> library, you can adjust or
+      extend national holidays to suit local rules or add personal events. 
+      <br /><br />
+      <strong>Maximizing Overtime:</strong> If you want to earn more, you can choose to maximize total hours. This typically leads to more intense schedules while still respecting the weekly cap.
+      <br /><br />
       <strong>Multiple Months Scheduling:</strong> The planner seamlessly handles multi-month windows, ensuring a smooth carry-over of hour constraints from one month to the next.
     </p>
 </body>
