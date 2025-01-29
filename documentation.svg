@@ -109,7 +109,7 @@
         </ul>
         This flexibility allows users to balance required work hours, personal constraints, 
         and overarching scheduling rules. The tool also offers an option to
-        <strong>maximize overtime</strong> (e.g., if higher income is desired).
+        <strong>maximize overtime</strong>.
     </p>
 
     <h2>Usage</h2>
@@ -476,7 +476,7 @@
       <strong>Custom holiday definitions:</strong> By integrating the <code>holidays</code> library, you can adjust or
       extend national holidays to suit local rules or add personal events. 
       <br /><br />
-      <strong>Maximizing Overtime:</strong> If you want to earn more, you can choose to maximize total hours. This typically leads to more intense schedules while still respecting the weekly cap.
+      <strong>Maximizing Overtime:</strong> This typically leads to more intense schedules while still respecting the weekly cap.
       <br /><br />
       <strong>Multiple Months Scheduling:</strong> The planner seamlessly handles multi-month windows, ensuring a smooth carry-over of hour constraints from one month to the next.
     </p>
