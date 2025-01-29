@@ -17,6 +17,12 @@ except ImportError:
     print("This script requires 'pulp' (PuLP) for optimization.")
     print("Install it using: pip install pulp")
     sys.exit(1)
+    
+def _last_day_of_month(year, month):
+    """Return a date object representing the last day of the given year and month."""
+    if month == 12:
+        return datetime.date(year, 12, 31)
+    return datetime.date(year, month + 1, 1) - datetime.timedelta(days=1)
 
 def get_japanese_holidays_in_range(start_year, start_month, end_year, end_month):
     """
@@ -27,7 +33,7 @@ def get_japanese_holidays_in_range(start_year, start_month, end_year, end_month)
     for y in range(start_year, end_year + 1):
         jp_holidays = holidays.Japan(years=[y])
         for day in jp_holidays.keys():
-            if (datetime.date(y, start_month, 1) <= day <= datetime.date(end_year, end_month, 31)):
+            if (datetime.date(y, start_month, 1) <= day <= _last_day_of_month(end_year, end_month)):
                 holiday_set.add(day)
     return holiday_set
 
