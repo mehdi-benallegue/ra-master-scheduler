@@ -102,7 +102,7 @@
         The <strong>Multi-Month Workday Planner</strong> is a Python-based tool that generates optimal work schedules 
         across multiple months. It enforces several constraints, such as:
         <ul>
-            <li><strong>Limited weekly hours:</strong> No more than <code>29 hours</code> in any rolling <code>7-day</code> window.</li>
+            <li><strong>Limited weekly hours:</strong> No more than <code>28 hours</code> in any rolling <code>7-day</code> window.</li>
             <li><strong>Holidays &amp; weekends:</strong> Automatically excludes recognized holidays and weekends, unless forced.</li>
             <li><strong>Forced days:</strong> Some dates can be explicitly set as workdays.</li>
             <li><strong>Disabled days:</strong> Some dates can be explicitly disallowed for work.</li>

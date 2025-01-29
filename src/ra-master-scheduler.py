@@ -67,7 +67,7 @@ def plan_workdays_multiple_months(
 
     - Exactly 10 workdays per calendar month (in each month from start to end).
     - A 'workday' has at least 7.75 hours (no explicit daily max).
-    - No more than 29 hours in any rolling 7-day window (across month boundaries).
+    - No more than 28 hours in any rolling 7-day window (across month boundaries).
     - If want_overtime=True, maximize total hours; otherwise, minimize.
     - 'forced_days': set of specific dates that MUST be workdays.
 
@@ -130,7 +130,7 @@ def plan_workdays_multiple_months(
         hours[d] = pulp.LpVariable(
             f"hours_{var_name}",
             lowBound=0,  # Minimum hours: 0
-            upBound=14.5  # Maximum hours: 14.5
+            upBound=14  # Maximum hours: 14
         )
 
     # Constraint 1: Exactly 10 workdays per month
@@ -146,21 +146,21 @@ def plan_workdays_multiple_months(
     # If yes_no[d] = 0, then hours[d] = 0.
     for d in date_list:
         prob += (hours[d] >= 7.75 * yes_no[d], f"Min7_75_ifWorked_{d}")
-        prob += (hours[d] <= 14.5, f"Max14HoursIfWorked_{d}")  # Enforce 14.5-hour max
-        prob += (hours[d] <= 29 * yes_no[d], f"Zero_ifNotWorked_{d}")
+        prob += (hours[d] <= 14, f"Max14HoursIfWorked_{d}")  # Enforce 14-hour max
+        prob += (hours[d] <= 28 * yes_no[d], f"Zero_ifNotWorked_{d}")
 
     # Constraint 2b: forced_days must be chosen (yes_no=1).
     for fd in forced_days:
         prob += (yes_no[fd] == 1, f"ForcedDay_{fd}")
 
-    # Constraint 3: No more than 29 hours in any rolling 7-day window
+    # Constraint 3: No more than 28 hours in any rolling 7-day window
     date_list_sorted = sorted(date_list)
     for i, d in enumerate(date_list_sorted):
         window_end = d + datetime.timedelta(days=6)
         window_days = [x for x in date_list_sorted if d <= x <= window_end]
         prob += (
-            pulp.lpSum([hours[x] for x in window_days]) <= 29,
-            f"Max29h_7days_start_{d}"
+            pulp.lpSum([hours[x] for x in window_days]) <= 28,
+            f"Max28h_7days_start_{d}"
         )
 
     # Objective: sum of hours over entire range
