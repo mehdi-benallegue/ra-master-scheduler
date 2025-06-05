@@ -108,8 +108,7 @@
             <li><strong>Disabled days:</strong> Some dates can be explicitly disallowed for work.</li>
         </ul>
         This flexibility allows users to balance required work hours, personal constraints, 
-        and overarching scheduling rules. The tool also offers an option to
-        <strong>maximize overtime</strong>.
+        and overarching scheduling rules. 
     </p>
 
     <h2>Usage</h2>
